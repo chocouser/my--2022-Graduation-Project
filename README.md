@@ -1,3 +1,1 @@
-<p align="center">
-# my git
-</p>
+# 나만의 저장소
