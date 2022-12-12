@@ -35,8 +35,6 @@
  
 3. ImageView에 이미지 적용
 
-
-
                         ... // 1번 아래 연결
                         byte[] b = binaryStringToByteArray(image);
                         ByteArrayInputStream is = new ByteArrayInputStream(b);
