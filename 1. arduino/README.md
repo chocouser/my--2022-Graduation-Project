@@ -8,6 +8,7 @@
 ![3](https://user-images.githubusercontent.com/101080195/206978233-e763b50b-8272-4add-be91-ae40cfe0b373.png)
 
 - 아두이노 코드
+<p>
 #include <SoftwareSerial.h>
 #include<Servo.h>
 #include <Wire.h> 
@@ -178,3 +179,4 @@ void loop()
 
 
 }
+                          </p>
