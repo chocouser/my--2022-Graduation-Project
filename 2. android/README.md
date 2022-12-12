@@ -2,8 +2,9 @@
  
 1. 파이어베이스에서 저장된 이미지 String을 가져와 변수에 저장
 
-    public void selectFirebase(int index) {
+ 
 
+        public void selectFirebase(int index) {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         firebaseDatabase.getReference("reviews/" + index).addValueEventListener(new ValueEventListener() {
             @Override
@@ -15,7 +16,7 @@
  
 2. String to byte[] 변환
 
-    public static byte[] binaryStringToByteArray(String s) {
+              public static byte[] binaryStringToByteArray(String s) {
         int count = s.length() / 8;
         byte[] b = new byte[count];
         for (int i = 1; i < count; ++i) {
@@ -24,17 +25,12 @@
         }
         return b;
     }
-    public static byte binaryStringToByte(String s) {
-        byte ret = 0, total = 0;
-        for (int i = 0; i < 8; ++i) {
-            ret = (s.charAt(7 - i) == '1') ? (byte) (1 << i) : 0;
-            total = (byte) (ret | total);
-        }
-        return total;
-    }
- 
+   
 3. ImageView에 이미지 적용
 
+
+ 
+         
                         ... // 1번 아래 연결
                         byte[] b = binaryStringToByteArray(image);
                         ByteArrayInputStream is = new ByteArrayInputStream(b);
