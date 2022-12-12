@@ -1,4 +1,4 @@
-# Realtime Database에서 이미지 가져오기
+# Realtime Database에서 이미지 저장하기
  
 1. 파이어베이스에서 저장된 이미지 String을 가져와 변수에 저장
 
@@ -51,7 +51,7 @@
 ![사진](https://user-images.githubusercontent.com/101080195/206981688-ea891dba-af9b-4261-890a-9df88da4591f.png)
 
 
-Realtime Database에서 이미지 가져오기
+# Realtime Database에서 이미지 가져오기
 1. 파이어베이스에서 저장된 이미지 String을 가져와 변수에 저장
  
 
@@ -86,7 +86,5 @@ Realtime Database에서 이미지 가져오기
     }
   
   3. 결과 화면
-  
- ![1](https://user-images.githubusercontent.com/101080195/206983065-56ff98fb-3a3e-4e51-a852-d83736bd226b.png)
-
+  ![다운로드](https://user-images.githubusercontent.com/101080195/206982769-b41ed344-4015-44ca-a1f2-bd5093023a05.png)
 
