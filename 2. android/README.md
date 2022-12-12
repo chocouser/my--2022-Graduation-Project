@@ -50,3 +50,41 @@
 4. 결과 화면
 ![사진](https://user-images.githubusercontent.com/101080195/206981688-ea891dba-af9b-4261-890a-9df88da4591f.png)
 
+
+Realtime Database에서 이미지 가져오기
+1. 파이어베이스에서 저장된 이미지 String을 가져와 변수에 저장
+ 
+
+        public void selectFirebase(int index) {
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.getReference("reviews/" + index).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    if (dataSnapshot.getKey().equals("image")) {
+                        String image = dataSnapshot.getValue().toString();
+                        ... // 3번 코드에서 이어집니다.
+
+2. ImageView에 이미지 적용
+
+
+                     
+                        ... // 1번 코드 아래
+                        byte[] b = binaryStringToByteArray(image);
+                        ByteArrayInputStream is = new ByteArrayInputStream(b);
+                        Drawable reviewImage = Drawable.createFromStream(is, "reviewImage");
+                        iv_review_image.setImageDrawable(reviewImage);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+  
+  3. 결과 화면
+  ![다운로드](https://user-images.githubusercontent.com/101080195/206982769-b41ed344-4015-44ca-a1f2-bd5093023a05.png)
+
