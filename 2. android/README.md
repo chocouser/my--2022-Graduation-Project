@@ -1,7 +1,7 @@
 # Realtime Database에서 이미지 가져오기
  
 1. 파이어베이스에서 저장된 이미지 String을 가져와 변수에 저장
-2. 
+
     public void selectFirebase(int index) {
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -14,7 +14,7 @@
                      ...// 3번에 연결
  
 2. String to byte[] 변환
-3. 
+
     public static byte[] binaryStringToByteArray(String s) {
         int count = s.length() / 8;
         byte[] b = new byte[count];
