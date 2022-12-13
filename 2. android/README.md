@@ -125,9 +125,6 @@
                 }
             }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }
@@ -140,23 +137,17 @@
 
 # 앱에 실시간 데이터베이스 SDK 추가
 
-   - dependencies 안에 Firebase database 에 대한 의존성을 추가해줍니다.
-
-plugins {
+       @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'com.google.gms.google-services'
-}
+    id 'com.google.gms.google-services
+    } dependencies {
 
-...
-
-dependencies {
-    ...
     implementation platform('com.google.firebase:firebase-bom:30.0.1')  // Import the BoM for the Firebase platform
     implementation 'com.google.firebase:firebase-database-ktx'  // Declare the dependency for the Realtime Database library
-    ...
-}
 
 
  
@@ -165,23 +156,16 @@ dependencies {
 
 2. RealMainActivity.kt
 
-// Write a message to the database
-val database = Firebase.database("https://....firebasedatabase.app")
+Write a message to the database
+val database = Firebase.database
 val myRef = database.getReference("message")
 myRef.setValue(binding.etInput.text.toString())  // 데이터 1개가 계속 수정되는 방식
 myRef.push().setValue(binding.etInput.text.toString())  // 데이터가 계속 쌓이는 방식
-
-
 myRef.setValue ("hi")
  
 
 # 데이터베이스에서 읽기
 
-실시간으로 앱 데이터를 읽기 위해 myRef 에 ValueEventListener 를 추가합니다.
-이 클래스의 onDataChange() 메서드는 데이터가 변경될 때마다 호출됩니다.
-이 클래스의 onCancelled() 메서드는 데이터 읽기에 실패 시 호출됩니다.
-
-// Read from the database
 myRef.addValueEventListener(object : ValueEventListener {
    override fun onDataChange(dataSnapshot: DataSnapshot) {  // Called once with the initial value and again
       val value = dataSnapshot.getValue<String>()
