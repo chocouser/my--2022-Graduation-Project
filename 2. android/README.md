@@ -69,20 +69,7 @@
 
 
                      
-                        ... // 1번 코드 아래
-                        byte[] b = binaryStringToByteArray(image);
-                        ByteArrayInputStream is = new ByteArrayInputStream(b);
-                        Drawable reviewImage = Drawable.createFromStream(is, "reviewImage");
-                        iv_review_image.setImageDrawable(reviewImage);
-                        
-                        
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp" >
+               
 
     <TextView
         android:id="@+id/tv_text"
@@ -100,6 +87,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
         
+                        ... // 1번 코드 아래
+                        byte[] b = binaryStringToByteArray(image);
+                        ByteArrayInputStream is = new ByteArrayInputStream(b);
+                        Drawable reviewImage = Drawable.createFromStream(is, "reviewImage");
+                        iv_review_image.setImageDrawable(reviewImage);
+                        
+                        
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp" >
     <EditText
         android:id="@+id/et_input"
         android:layout_width="0dp"
