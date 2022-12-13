@@ -24,7 +24,7 @@
             b[i - 1] = binaryStringToByte(t);
         }
         return b;
-    }
+       }
    
 3. ImageView에 이미지 적용
 
@@ -45,7 +45,7 @@
 
             }
         });
-    }
+        }
  
 4. 결과 화면
 ![사진](https://user-images.githubusercontent.com/101080195/206981688-ea891dba-af9b-4261-890a-9df88da4591f.png)
@@ -71,8 +71,8 @@
                      
                
 
-    <TextView
-        android:id="@+id/tv_text"
+       <TextView
+         android:id="@+id/tv_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="20dp"
@@ -100,7 +100,7 @@
            android:padding="20dp">
     
     
-    <EditText
+       <EditText
         android:id="@+id/et_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_send" />
 
-    <Button
+       <Button
         android:id="@+id/btn_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,15 +119,15 @@
         app:layout_constraintStart_toEndOf="@id/et_input"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+       </androidx.constraintlayout.widget.ConstraintLayout>
+ 
                     }
                 }
             }
 
             }
         });
-    }
+       }
   
   3. 결과 화면
   
