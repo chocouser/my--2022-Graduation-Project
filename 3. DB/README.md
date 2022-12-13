@@ -1,6 +1,8 @@
 <p align="center">
   
   ☞ DFD (Data Flow Diagram) <br>
+  ![다운로드](https://user-images.githubusercontent.com/101080195/207227444-56376ece-b064-4fc3-aad2-dd35964d0428.jpg)
+
 
 쉽게 말해 자료의 출발지와 목적지를 그림으로 표시한 것이다.
 '데이터 흐름도' 또는 '자료 흐름도' 라고도 한다.
@@ -46,3 +48,4 @@ DFD의 구성요소간 인터페이스를 나타낸다.
 7. 검토하고 작성한다.
   
 </p>
+
