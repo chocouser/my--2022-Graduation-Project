@@ -74,6 +74,53 @@
                         ByteArrayInputStream is = new ByteArrayInputStream(b);
                         Drawable reviewImage = Drawable.createFromStream(is, "reviewImage");
                         iv_review_image.setImageDrawable(reviewImage);
+                        
+                        
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp" >
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Text"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:background="@color/grey_300"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/et_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+        
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_send" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="send"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/et_input"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
                     }
                 }
             }
@@ -111,10 +158,12 @@ dependencies {
     ...
 }
 
-2. RealMainActivity.kt
+
  
 
 # 데이터베이스에 쓰기
+
+2. RealMainActivity.kt
 
 // Write a message to the database
 val database = Firebase.database("https://....firebasedatabase.app")
@@ -126,7 +175,7 @@ myRef.push().setValue(binding.etInput.text.toString())  // 데이터가 계속 �
 myRef.setValue ("hi")
  
 
-◾# 데이터베이스에서 읽기
+# 데이터베이스에서 읽기
 
 실시간으로 앱 데이터를 읽기 위해 myRef 에 ValueEventListener 를 추가합니다.
 이 클래스의 onDataChange() 메서드는 데이터가 변경될 때마다 호출됩니다.
@@ -231,7 +280,7 @@ RealMainActicity 에 대한 레이아웃입니다.
     android:layout_height="match_parent"
     android:padding="20dp" >
 
-    <TextView
+     <TextView
         android:id="@+id/tv_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -264,8 +313,7 @@ RealMainActicity 에 대한 레이아웃입니다.
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/et_input"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent" /> 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
