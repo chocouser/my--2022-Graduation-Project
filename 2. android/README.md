@@ -274,14 +274,14 @@ class RealMainActivity: AppCompatActivity() {
    RealMainActicity 에 대한 레이아웃입니다.
 
    <?xml version="1.0" encoding="utf-8"?>
-   <androidx.constraintlayout.widget.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp" >
-     <TextView
-            
+
+    <TextView
         android:id="@+id/tv_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -314,7 +314,8 @@ class RealMainActivity: AppCompatActivity() {
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/et_input"
-        app:layout_constraintEnd_toEndOf="parent" /> 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
