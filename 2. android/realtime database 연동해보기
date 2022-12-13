@@ -1,1 +1,19 @@
+◾ 앱에 실시간 데이터베이스 SDK 추가
 
+   - dependencies 안에 Firebase database 에 대한 의존성을 추가해줍니다.
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+}
+
+...
+
+dependencies {
+    ...
+    implementation platform('com.google.firebase:firebase-bom:30.0.1')  // Import the BoM for the Firebase platform
+    implementation 'com.google.firebase:firebase-database-ktx'  // Declare the dependency for the Realtime Database library
+    ...
+}
