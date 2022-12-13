@@ -148,53 +148,51 @@
 
     implementation platform('com.google.firebase:firebase-bom:30.0.1')  // Import the BoM for the Firebase platform
     implementation 'com.google.firebase:firebase-database-ktx'  // Declare the dependency for the Realtime Database library
-
+   
 
  
 
 # 데이터베이스에 쓰기
 
-2. RealMainActivity.kt
-
-Write a message to the database
-val database = Firebase.database
-val myRef = database.getReference("message")
-myRef.setValue(binding.etInput.text.toString())  // 데이터 1개가 계속 수정되는 방식
-myRef.push().setValue(binding.etInput.text.toString())  // 데이터가 계속 쌓이는 방식
-myRef.setValue ("hi")
+    Write a message to the database
+    val database = Firebase.database
+    val myRef = database.getReference("message")
+    myRef.setValue(binding.etInput.text.toString()) 
+    myRef.push().setValue(binding.etInput.text.toString())  
+    myRef.setValue ("hi")
  
 
 # 데이터베이스에서 읽기
 
-myRef.addValueEventListener(object : ValueEventListener {
-   override fun onDataChange(dataSnapshot: DataSnapshot) {  // Called once with the initial value and again
+    myRef.addValueEventListener(object : ValueEventListener {
+    override fun onDataChange(dataSnapshot: DataSnapshot) {  // Called once with the initial value and again
       val value = dataSnapshot.getValue<String>()
       Log.d(TAG, "Value is: $value")
-   }
-   override fun onCancelled(error: DatabaseError) {  // Failed to read value
+    }
+    override fun onCancelled(error: DatabaseError) {  // Failed to read value
       Log.w(TAG, "Failed to read value.", error.toException())  
-   }
-})
+    }
+     })
 
-package com.eun.myappkotlin02.realtime
+     package com.eun.myappkotlin02.realtime
 
-import android.content.Intent
-import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import com.eun.myappkotlin02.LogUtil
-import com.eun.myappkotlin02.databinding.ActivityRealMainBinding
-import com.eun.myappkotlin02.realtime.chat.view.ChatMainActivity
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
+     import android.content.Intent
+     import android.os.Bundle
+     import android.util.Log
+     import androidx.appcompat.app.AppCompatActivity
+     import com.eun.myappkotlin02.LogUtil
+     import com.eun.myappkotlin02.databinding.ActivityRealMainBinding
+     import com.eun.myappkotlin02.realtime.chat.view.ChatMainActivity
+     import com.google.firebase.database.DataSnapshot
+     import com.google.firebase.database.DatabaseError
+     import com.google.firebase.database.ValueEventListener
+     import com.google.firebase.database.ktx.database
+     import com.google.firebase.database.ktx.getValue
+     import com.google.firebase.ktx.Firebase
 
-class RealMainActivity: AppCompatActivity() {
+     class RealMainActivity: AppCompatActivity() {
 
-    companion object {
+     companion object {
         const val TAG = "RealMainActivity"
     }
 
@@ -221,9 +219,9 @@ class RealMainActivity: AppCompatActivity() {
             val database = Firebase.database("https://....firebasedatabase.app")
             val myRef = database.getReference("message")
 
-            myRef.setValue(binding.etInput.text.toString())  // 데이터 1개가 계속 수정되는 방식
-//            myRef.push().setValue(binding.etInput.text.toString())  // 데이터가 계속 쌓이는 방식
-            // [END write_message]
+            myRef.setValue(binding.etInput.text.toString()) 
+    myRef.push().setValue(binding.etInput.text.toString())  
+           
 
             Log.d(TAG, "myRef :: $myRef")
             binding.etInput.text.clear()
@@ -246,26 +244,26 @@ class RealMainActivity: AppCompatActivity() {
             // [END read_message]
 
         }
-    }
-}
+      }
+     }
  
 
  
 
 - activity_real_main.xml
- 
 
-   RealMainActicity 에 대한 레이아웃입니다.
 
-   <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="20dp" >
+   
 
-    <TextView
+      <?xml version="1.0" encoding="utf-8"?>
+      <androidx.constraintlayout.widget.ConstraintLayout 
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="20dp" >
+
+      <TextView
         android:id="@+id/tv_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -281,7 +279,7 @@ class RealMainActivity: AppCompatActivity() {
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
         
-    <EditText
+      <EditText
         android:id="@+id/et_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -290,7 +288,7 @@ class RealMainActivity: AppCompatActivity() {
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_send" />
 
-    <Button
+      <Button
         android:id="@+id/btn_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -300,6 +298,6 @@ class RealMainActivity: AppCompatActivity() {
         app:layout_constraintStart_toEndOf="@id/et_input"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
 
 
