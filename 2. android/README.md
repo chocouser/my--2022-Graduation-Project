@@ -91,7 +91,7 @@
   ![1](https://user-images.githubusercontent.com/101080195/206989473-60020bda-38bf-45a0-a0de-86046e956108.png)
 
 
-#◾ 앱에 실시간 데이터베이스 SDK 추가
+# 앱에 실시간 데이터베이스 SDK 추가
 
    - dependencies 안에 Firebase database 에 대한 의존성을 추가해줍니다.
 
@@ -114,7 +114,7 @@ dependencies {
 2. RealMainActivity.kt
  
 
-◾# 데이터베이스에 쓰기
+# 데이터베이스에 쓰기
 
 // Write a message to the database
 val database = Firebase.database("https://....firebasedatabase.app")
@@ -220,6 +220,7 @@ class RealMainActivity: AppCompatActivity() {
  
 
 3. activity_real_main.xml
+ 
 RealMainActicity 에 대한 레이아웃입니다.
 
 <?xml version="1.0" encoding="utf-8"?>
